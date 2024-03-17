@@ -1,0 +1,5 @@
+instances
+*.json
+*.sqlite
+__pycache__
+node_modules

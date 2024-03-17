@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simulation Form</title>
+    <link rel="stylesheet" href="/index.css"/>
+  </head>
+  
+  <button onclick="window.location.href='/dashboard/index.html'">Dashboard</button>
+  <button onclick="window.location.href='/jobs.html'">View Jobs</button>
+  <body>
+    <form action="/run-simulation" method="post" class="container">
+      {% for key, value in default_params.items() %}
+      <div>
+        <label for="{{ key }}">{{ key }}</label>
+        <input
+          type="{{ 'number' if value is number else 'text' }}"
+          id="{{ key }}"
+          name="{{ key }}"
+          value="{{ value }}"
+        />
+      </div>
+      {% endfor %}
+      <div>
+        <label for="name">Simulation Name:</label>
+        <input type="text" id="database" name="name" required />
+      </div>
+      <button type="submit">Run Simulation</button>
+    </form>
+   
+  </body>
+</html>
